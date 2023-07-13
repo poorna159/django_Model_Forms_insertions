@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpage</title>
+    <style>
+        form{
+            color: white;
+            width: fit-content;
+            padding: 30px;
+            background-color: rgb(168, 55, 202);
+            box-shadow: -10px 10px 20px red;
+            border-radius: 20px;
+            transition: .6s;
+            
+        }
+        input{
+            transition: .5s;
+        }
+        form:hover{
+            transform: translate(-20px,20px);
+            box-shadow: 40px 20px 30pX  rgb(0, 94, 128);
+        }
+        input:hover{
+            box-shadow: -5px 5px 20px  rgb(212, 101, 190);
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <h1>insert_webpage modelform</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{WPMO.as_p}}
+
+            <input type="submit" value="submit">
+        </form>
+    </center>
+</body>
+</html>
