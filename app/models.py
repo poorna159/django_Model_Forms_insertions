@@ -1,10 +1,8 @@
-
-
 from django.db import models
 
+from django import forms
+
 # Create your models here.
-
-
 
 def validate_for_a(Svalue):
     if Svalue[0].lower()=='a':

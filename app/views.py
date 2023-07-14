@@ -34,6 +34,6 @@ def insert_accessrecord(request):
         ARMFOD=AccessRecordModelForm(request.POST)
         if ARMFOD.is_valid():
             ARMFOD.save()
-            return HttpResponse("Insertion of data is done successfully")
+        return HttpResponse("Insertion of data is done successfully")
 
     return render(request,'insert_accessrecord.html',d)
