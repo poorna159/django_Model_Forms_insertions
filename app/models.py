@@ -1,6 +1,18 @@
+
+
 from django.db import models
 
 # Create your models here.
+
+
+
+def validate_for_a(Svalue):
+    if Svalue[0].lower()=='a':
+        raise models.ValidationError("First letter should not be a")
+
+def validate_for_len(name):
+    if len(name)<=5:
+        raise models.ValidationError('len is less than 5')
 
 
 class Topic(models.Model):
@@ -12,7 +24,7 @@ class Topic(models.Model):
     
 class Webpage(models.Model):
     topic_name=models.ForeignKey(Topic,on_delete=models.CASCADE)
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=100,validators=[validate_for_a,validate_for_len])
     url=models.URLField()
     def __str__(self):
         return self.name
